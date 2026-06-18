@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sonic X-treme – VAPORWARE</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- NAVBAR identica alla home, con lost selection che rimanda al carosello della home -->
+
+  <nav class="navbar">
+    <a href="lost-selection.html" class="navbar__logo">
+      <img src="img/logo-vaporware.png" alt="Vaporware logo" />
+    </a>
+    <ul class="navbar__menu">
+      <li><a href="lost-selection.html#lost-selection">lost selection</a></li>
+      <li><a href="vanishing-projects.html">vanishing projects</a></li>
+      <li><a href="broken-promises.html">broken promises</a></li>
+      <li><a href="phantom-hardware.html">phantom hardware</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO DETTAGLIO
+       Due colonne: galleria a sinistra, info a destra.
+       La galleria usa radio CSS-only: cliccando una miniatura
+       si aggiorna l'immagine grande. -->
+
+  <section class="detail-hero">
+
+    <!-- GALLERIA IMMAGINI (CSS-only con radio)
+         Struttura: radio fratelli diretti di .gallery,
+         le label (miniature) mostrano/nascondono la foto grande. -->
+
+    <div class="gallery-root">
+
+      <!-- 4 radio, uno per immagine; il primo è attivo di default -->
+
+      <input type="radio" class="gallery__radio" name="gallery" id="img-0" checked />
+      <input type="radio" class="gallery__radio" name="gallery" id="img-1" />
+      <input type="radio" class="gallery__radio" name="gallery" id="img-2" />
+      <input type="radio" class="gallery__radio" name="gallery" id="img-3" />
+
+      <div class="gallery">
+
+        <!-- Immagine grande: una per radio, mostrata solo quando il radio è checked -->
+
+        <div class="gallery__main">
+          <img class="gallery__main-img img-0" src="img/sonic-xtreme/sonic-1.jpg" alt="Sonic X-treme screenshot 1" />
+          <img class="gallery__main-img img-1" src="img/sonic-xtreme/sonic-2.jpg" alt="Sonic X-treme screenshot 2" />
+          <img class="gallery__main-img img-2" src="img/sonic-xtreme/sonic-3.png" alt="Sonic X-treme screenshot 3" />
+          <img class="gallery__main-img img-3" src="img/sonic-xtreme/sonic-4.png" alt="Sonic X-treme screenshot 4" />
+        </div>
+
+        <!-- Miniature cliccabili: ogni label attiva il radio corrispondente -->
+
+        <div class="gallery__thumbs">
+          <label class="gallery__thumb" for="img-0">
+            <img src="img/sonic-xtreme/sonic-1.jpg" alt="Miniatura 1" />
+          </label>
+          <label class="gallery__thumb" for="img-1">
+            <img src="img/sonic-xtreme/sonic-2.jpg" alt="Miniatura 2" />
+          </label>
+          <label class="gallery__thumb" for="img-2">
+            <img src="img/sonic-xtreme/sonic-3.png" alt="Miniatura 3" />
+          </label>
+          <label class="gallery__thumb" for="img-3">
+            <img src="img/sonic-xtreme/sonic-4.png" alt="Miniatura 4" />
+          </label>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- INFO GIOCO a destra -->
+
+    <div class="detail-hero__info">
+      <img class="detail-hero__game-logo" src="img/sonic-xtreme/sonic-logo.png" alt="Sonic X-treme" />
+
+      <ul class="detail-hero__meta">
+        <li><span class="meta-key">STATUS:</span> <span class="meta-val">CANCELLED</span></li>
+        <li><span class="meta-key">PLATFORM:</span> <span class="meta-val">SEGA SATURN</span></li>
+        <li><span class="meta-key">DEVELOPER:</span> <span class="meta-val">SEGA TECHNICAL INSTITUTE</span></li>
+        <li><span class="meta-key">ANNOUNCED:</span> <span class="meta-val">1995</span></li>
+        <li><span class="meta-key">CANCELLED:</span> <span class="meta-val">1996</span></li>
+      </ul>
+
+      <p class="detail-hero__desc">
+        A cancelled 3D Sonic platform game developed for the Sega Saturn during one of the most
+        turbulent periods in Sega's history.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- CONTENUTO PRINCIPALE – z-pattern di sezioni -->
+
+  <main class="detail-main">
+
+    <!-- OVERVIEW – testo a sinistra, video a destra -->
+
+    <section class="detail-section">
+      <div class="detail-section__text">
+        <h2 class="detail-section__title">OVERVIEW</h2>
+        <p>
+          Sonic X-treme was intended to become the first fully 3D Sonic the Hedgehog game.
+        </p>
+        <p>
+          Developed for the Sega Saturn during the mid-1990s, the project underwent multiple
+          redesigns, engine rewrites, and internal production conflicts before eventually being
+          cancelled in 1996.
+        </p>
+        <p>
+          Despite never reaching release, the game became one of the most famous examples of
+          video game vaporware.
+        </p>
+      </div>
+
+      <!-- Video con controlli nativi del browser: play/pause/volume/fullscreen integrati -->
+      <div class="detail-section__media">
+        <video class="detail-video" controls poster="img/sonic-xtreme/sonic-overview.png">
+          <source src="img/sonic-xtreme/promo-video-sonic-xtreme.mp4" type="video/mp4" />
+          Il tuo browser non supporta il tag video.
+        </video>
+        <p class="detail-section__caption">Promo video of Sonic X-treme.</p>
+      </div>
+    </section>
+
+    <!-- STORY – immagine a sinistra, testo a destra (z invertito) -->
+    <section class="detail-section detail-section--reverse">
+      <div class="detail-section__media">
+        <img src="img/sonic-xtreme/sonic-story.png" alt="Tiara B. – concept art" />
+        <p class="detail-section__caption">Line art of Tiara Boobowski, Sonic's love interest in Sonic X-treme.</p>
+      </div>
+
+      <div class="detail-section__text">
+        <h2 class="detail-section__title">STORY</h2>
+        <p>
+          The game followed Sonic as he explored a series of surreal floating worlds threatened
+          by the villain BlackNarcissus.
+        </p>
+        <p>
+          Throughout the adventure, Sonic would travel across futuristic environments filled
+          with loops, suspended pathways, and mechanical structures while attempting to stop
+          the destruction of the planet.
+        </p>
+        <p>
+          Early versions of the project also included additional playable characters such as
+          Tiara Boobowski, a character created specifically for the game.
+        </p>
+        <p>
+          Compared to previous Sonic titles, Sonic X-treme aimed for a more experimental and
+          futuristic atmosphere.
+        </p>
+      </div>
+    </section>
+
+    <!-- GAMEPLAY – testo a sinistra, video a destra -->
+    <section class="detail-section">
+      <div class="detail-section__text">
+        <h2 class="detail-section__title">GAMEPLAY</h2>
+        <p>
+          Sonic X-treme was designed as a fully 3D platform game focused on speed, momentum,
+          and exploration.
+        </p>
+        <p>
+          One of its most recognizable features was the experimental fisheye camera system,
+          which distorted the environments around the player and created a curved visual effect.
+        </p>
+        <p>Gameplay included:</p>
+        <ul class="detail-list">
+          <li>high-speed platforming</li>
+          <li>ring collection</li>
+          <li>large explorable stages</li>
+          <li>boss encounters</li>
+          <li>vertical movement</li>
+        </ul>
+        <p>
+          Prototype footage showed mechanics and level structures that differed significantly
+          from both classic 2D Sonic games and later 3D entries in the series.
+        </p>
+      </div>
+
+      <div class="detail-section__media">
+        <video class="detail-video" controls poster="img/sonic-xtreme/sonic-gameplay.png">
+          <source src="img/sonic-xtreme/demo-gameplay-sonic-xtreme.mp4" type="video/mp4" />
+          Il tuo browser non supporta il tag video.
+        </video>
+        <p class="detail-section__caption">Gameplay demo of Sonic X-treme.</p>
+      </div>
+    </section>
+
+    <!-- DEVELOPMENT – immagine a sinistra, testo a destra -->
+    <section class="detail-section detail-section--reverse">
+      <div class="detail-section__media">
+        <img src="img/sonic-xtreme/sonic-sviluppo.jpg" alt="Enemy Designs Phase 1 – documentazione di sviluppo" />
+        <p class="detail-section__caption">Enemy Designs Phase 1, documentazione di sviluppo.</p>
+      </div>
+
+      <div class="detail-section__text">
+        <h2 class="detail-section__title">DEVELOPMENT</h2>
+        <p>
+          Development began during Sega's transition from 2D to 3D gaming.
+        </p>
+        <p>
+          Multiple teams worked on different versions of the game simultaneously, leading to
+          technical issues and inconsistent creative direction.
+        </p>
+        <p>
+          The project changed engines several times throughout production, while developers
+          struggled with the Sega Saturn hardware and increasing deadlines.
+        </p>
+        <p>
+          Former team members later described the development process as chaotic and physically
+          exhausting.
+        </p>
+      </div>
+    </section>
+
+    <!-- CANCELLATION & LEGACY – testo a sinistra, immagine a destra -->
+    <section class="detail-section">
+      <div class="detail-section__text">
+        <h2 class="detail-section__title">CANCELLATION &amp; LEGACY</h2>
+        <p>
+          Sonic X-treme was officially cancelled in late 1996.
+        </p>
+        <p>
+          According to reports from developers involved in the project, internal conflicts
+          between Sega of America and Sega of Japan, combined with technical difficulties and
+          severe time pressure, contributed to the cancellation.
+        </p>
+        <p>
+          As a result, the Sega Saturn never received an original mainline Sonic platform game.
+        </p>
+        <p>
+          Sonic X-treme became one of the most discussed cancelled games in video game history.
+        </p>
+        <p>
+          Over the years, prototype builds, concept art, development footage, and interviews
+          with former developers continued to surface online, turning the project into a symbol
+          of Sega's struggles during the Saturn era.
+        </p>
+        <p>
+          Today, the game remains one of gaming's most famous "what if" scenarios.
+        </p>
+      </div>
+
+      <div class="detail-section__media">
+        <img src="img/sonic-xtreme/sonic-legacy.png" alt="Knuckles Overhead Camera Test" />
+        <p class="detail-section__caption">One of the proposed alternate playstyles that was ultimately discarded.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER identico alla home -->
+  <footer class="footer">
+            <a class="footer__link" href="sources.html">sources</a>
+            <a class="footer__link" href="3DModels.html">models 3d</a>
+            <a class="footer__link" href="about-us.html">about us</a>
+        </footer>
+
+  <script>
+    const logo = document.querySelector('.navbar__logo');
+    let atTop = true;
+
+    window.addEventListener('scroll', () => {
+      atTop = window.scrollY < 50;
+    });
+
+    logo.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (atTop) {
+        window.location.href = 'lost-selection.html';
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  </script>
+
+</body>
+
+</html>

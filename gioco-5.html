@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kid Kirby – VAPORWARE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- NAVBAR identica alla home, con lost selection che rimanda al carosello della home -->
+    <nav class="navbar">
+        <a href="lost-selection.html" class="navbar__logo">
+            <img src="img/logo-vaporware.png" alt="Vaporware logo" />
+        </a>
+        <ul class="navbar__menu">
+            <li><a href="lost-selection.html#lost-selection">lost selection</a></li>
+            <li><a href="vanishing-projects.html">vanishing projects</a></li>
+            <li><a href="broken-promises.html">broken promises</a></li>
+            <li><a href="phantom-hardware.html">phantom hardware</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO DETTAGLIO
+       Due colonne: galleria a sinistra, info a destra.
+       La galleria usa radio CSS-only: cliccando una miniatura
+       si aggiorna l'immagine grande. -->
+    <section class="detail-hero">
+
+        <!-- GALLERIA IMMAGINI (CSS-only con radio)
+         Struttura: radio fratelli diretti di .gallery,
+         le label (miniature) mostrano/nascondono la foto grande. -->
+        <div class="gallery-root">
+
+            <!-- 4 radio, uno per immagine; il primo è attivo di default -->
+            <input type="radio" class="gallery__radio" name="gallery" id="img-0" checked />
+            <input type="radio" class="gallery__radio" name="gallery" id="img-1" />
+            <input type="radio" class="gallery__radio" name="gallery" id="img-2" />
+            <input type="radio" class="gallery__radio" name="gallery" id="img-3" />
+
+            <div class="gallery">
+
+                <!-- Immagine grande: una per radio, mostrata solo quando il radio è checked -->
+                <div class="gallery__main">
+                    <img class="gallery__main-img img-0" src="img/kid-kirby/kid-kirby-1.webp" alt="" />
+                    <img class="gallery__main-img img-1" src="img/kid-kirby/kid-kirby-2.webp" alt="" />
+                    <img class="gallery__main-img img-2" src="img/kid-kirby/kid-kirby-3.webp" alt="" />
+                    <img class="gallery__main-img img-3" src="img/kid-kirby/kid-kirby-4.webp" alt="" />
+                </div>
+
+                <!-- Miniature cliccabili: ogni label attiva il radio corrispondente -->
+                <div class="gallery__thumbs">
+                    <label class="gallery__thumb" for="img-0">
+                        <img src="img/kid-kirby/kid-kirby-1.webp" alt="Miniatura 1" />
+                    </label>
+                    <label class="gallery__thumb" for="img-1">
+                        <img src="img/kid-kirby/kid-kirby-2.webp" alt="Miniatura 2" />
+                    </label>
+                    <label class="gallery__thumb" for="img-2">
+                        <img src="img/kid-kirby/kid-kirby-3.webp" alt="Miniatura 3" />
+                    </label>
+                    <label class="gallery__thumb" for="img-3">
+                        <img src="img/kid-kirby/kid-kirby-4.webp" alt="Miniatura 4" />
+                    </label>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- INFO GIOCO a destra -->
+        <div class="detail-hero__info">
+            <img class="detail-hero__game-logo" src="img/kid-kirby/kid-kirby-logo.webp" alt="" />
+
+            <ul class="detail-hero__meta">
+                <li><span class="meta-key">STATUS:</span> <span class="meta-val">CANCELLED</span></li>
+                <li><span class="meta-key">PLATFORM:</span> <span class="meta-val">Super Nintendo Entertainment System
+                    </span></li>
+                <li><span class="meta-key">DEVELOPER:</span> <span class="meta-val">DMA Design
+                    </span></li>
+                <li><span class="meta-key">ANNOUNCED:</span> <span class="meta-val">1995 </span></li>
+                <li><span class="meta-key">CANCELLED:</span> <span class="meta-val">1995 </span></li>
+            </ul>
+
+            <p class="detail-hero__desc">
+                A cancelled Kirby platform game developed for the Super Nintendo Entertainment System and designed
+                around the SNES mouse accessory.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- CONTENUTO PRINCIPALE – z-pattern di sezioni -->
+    <main class="detail-main">
+
+        <!-- OVERVIEW – testo a sinistra, video a destra -->
+        <section class="detail-section">
+            <div class="detail-section__text">
+                <h2 class="detail-section__title">OVERVIEW</h2>
+                <p>
+                    Kid Kirby was a side-scrolling platform game developed by DMA Design for the SNES.
+                </p>
+                <p>
+                    Unlike previous Kirby titles, the game focused on a younger version of Kirby and introduced gameplay
+                    built around mouse controls, a rare concept for Nintendo games during the mid-1990s.
+                </p>
+                <p>
+                    Despite being publicly announced, the project was quietly cancelled before release.
+                </p>
+            </div>
+
+            <!-- Video con controlli nativi del browser: play/pause/volume/fullscreen integrati -->
+            <div class="detail-section__media">
+                <video class="detail-video" controls poster="img/kid-kirby/kid-kirby-overview.webp">
+                    <source src="img/kid-kirby/kid-kirby-overview.mp4" type="video/mp4" />
+                    Il tuo browser non supporta il tag video.
+                </video>
+                <p class="detail-section__caption">Many cancelled games of kirby.</p>
+            </div>
+        </section>
+
+        <!-- STORY – immagine a sinistra, testo a destra (z invertito) -->
+        <section class="detail-section detail-section--reverse">
+            <div class="detail-section__media">
+                <img src="img/kid-kirby/kid-kirby-story.webp" alt="" />
+                <p class="detail-section__caption">Boney cutscene
+                </p>
+            </div>
+
+            <div class="detail-section__text">
+                <h2 class="detail-section__title">STORY</h2>
+                <p>
+                    The game followed a younger version of Kirby during his early adventures across Dream Land.
+                </p>
+                <p>
+                    Players would guide Kirby through colorful fantasy environments filled with enemies, obstacles, and
+                    floating platforms while helping him progress through different stages and challenges.
+                </p>
+                <p>
+                    Although very little story material survived after cancellation, early footage and promotional
+                    artwork suggested a more energetic and playful tone compared to previous Kirby titles.
+                </p>
+            </div>
+        </section>
+
+        <!-- GAMEPLAY – testo a sinistra, video a destra -->
+        <section class="detail-section">
+            <div class="detail-section__text">
+                <h2 class="detail-section__title">GAMEPLAY</h2>
+                <p>
+                    Kid Kirby was designed as a 2D platform game controlled primarily with the SNES mouse accessory.
+                    Instead of traditional movement systems, players interacted with Kirby by dragging, launching, and
+                    guiding him across levels using mouse inputs.
+                </p>
+                <p>Gameplay included:</p>
+                <ul class="detail-list">
+                    <li>platforming </li>
+                    <li>puzzle-solving </li>
+                    <li>object interaction </li>
+                    <li>enemy encounters </li>
+                    <li>momentum-based movement </li>
+                </ul>
+                <p>
+                    The game also featured hand-drawn animation and expressive character movements, giving it a distinct
+                    visual style compared to other Kirby games released at the time.
+                </p>
+            </div>
+
+            <div class="detail-section__media">
+                <video class="detail-video" controls poster="img/kid-kirby/kid-kirby-gameplay.webp">
+                    <source src="img/kid-kirby/kid-kirby-gameplay.mp4" type="video/mp4" />
+                    Il tuo browser non supporta il tag video.
+                </video>
+                <p class="detail-section__caption">A few screen of the game.</p>
+            </div>
+        </section>
+
+        <!-- DEVELOPMENT – immagine a sinistra, testo a destra -->
+        <section class="detail-section detail-section--reverse">
+            <div class="detail-section__media">
+                <img src="img/kid-kirby/kid-kirby-sviluppo.webp" alt="" />
+                <p class="detail-section__caption">Marukatsu shonen</p>
+            </div>
+
+            <div class="detail-section__text">
+                <h2 class="detail-section__title">DEVELOPMENT</h2>
+                <p>
+                    Development began during the final years of the Super Nintendo era as Nintendo experimented with
+                    alternative hardware accessories and control methods.
+                </p>
+                <p>
+                    The project was developed by DMA Design, the studio that would later become famous for creating
+                    Grand Theft Auto.
+                </p>
+                <p>
+                    Only a small amount of footage, magazine previews, and promotional material survived after the
+                    cancellation of the game.
+                </p>
+            </div>
+        </section>
+
+        <!-- CANCELLATION & LEGACY – testo a sinistra, immagine a destra -->
+        <section class="detail-section">
+            <div class="detail-section__text">
+                <h2 class="detail-section__title">CANCELLATION &amp; LEGACY</h2>
+                <p>
+                    Kid Kirby was cancelled before launch.
+                </p>
+                <p>
+                    Reports suggest the project struggled due to the declining popularity of the SNES mouse accessory
+                    and the approaching end of the SNES lifecycle.
+                </p>
+                <p>
+                    Nintendo never officially revisited the concept after cancellation.
+                <p>
+                    Although less famous than other cancelled Nintendo projects, Kid Kirby became a cult curiosity among
+                    preservation communities and retro gaming fans.
+                </p>
+                <p>
+                    Because so little material exists, the game remains one of Nintendo’s most obscure unreleased
+                    titles.
+                </p>
+            </div>
+
+            <div class="detail-section__media">
+                <img src="img/kid-kirby/kid-kirby-legacy.webp" alt="" />
+                <p class="detail-section__caption">Mother 3 booklet.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER identico alla home -->
+    <footer class="footer">
+        <a class="footer__link" href="sources.html">sources</a>
+        <a class="footer__link" href="3DModels.html">models 3d</a>
+        <a class="footer__link" href="about-us.html">about us</a>
+    </footer>
+
+    <script>
+        const logo = document.querySelector('.navbar__logo');
+        let atTop = true;
+
+        window.addEventListener('scroll', () => {
+            atTop = window.scrollY < 50;
+        });
+
+        logo.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (atTop) {
+                window.location.href = 'lost-selection.html';
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    </script>
+
+</body>
+
+</html>

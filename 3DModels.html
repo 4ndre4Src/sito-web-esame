@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Models – Vaporware</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Model Viewer per i modelli 3D nelle card del carosello -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="lost-selection.html" class="navbar__logo">
+            <img src="img/logo-vaporware.png" alt="Vaporware logo" />
+        </a>
+
+        <ul class="navbar__menu">
+            <li><a href="lost-selection.html#lost-selection">lost selection</a></li>
+            <li><a href="vanishing-projects.html">vanishing projects</a></li>
+            <li><a href="broken-promises.html">broken promises</a></li>
+            <li><a href="phantom-hardware.html">phantom hardware</a></li>
+        </ul>
+    </nav>
+
+    <section class="vanishing-hero">
+        <h1>3D Models</h1>
+        <h2>3D ARTIFACTS ARCHIVE</h2>
+        <p>A curated collection of original 3D models inspired by unreleased and forgotten gaming history.</p>
+    </section>
+
+    <main class="container-modelli">
+
+        <div class="fila-modelli">
+
+            <div class="scheda-modello">
+                <div class="embed-sketchfab">
+                    <model-viewer src="modelli/Megaman_Cannon.glb" alt="Mega Man" auto-rotate camera-controls>
+                    </model-viewer>
+                </div>
+                <div class="info-modello">
+                    <h3>Mega Man legends</h3>
+                    <p>Title: Megaman Buster</p>
+                    <a class="link-sketchfab"
+                        href="https://sketchfab.com/3d-models/megaman--cannon-eaf2901ace5a47bda9010c3cfeecf196"
+                        target="_blank">View on Sketchfab</a>
+                </div>
+            </div>
+
+            <div class="scheda-modello">
+                <div class="embed-sketchfab">
+                    <model-viewer class="carousel__model" src="modelli/SONIC_SOLO.glb" alt="" auto-rotate
+                        camera-controls></model-viewer>
+                </div>
+                <div class="info-modello">
+                    <h3>Sonic Xtreme</h3>
+                    <p>Title: Sonic</p>
+                    <a class="link-sketchfab"
+                        href="https://sketchfab.com/3d-models/sonic-x-treme-b1ec41c5bfbf44779415e6255220cfd5"
+                        target="_blank">View on Sketchfab</a>
+                </div>
+            </div>
+
+            <div class="scheda-modello">
+                <div class="embed-sketchfab">
+                    <model-viewer class="carousel__model" src="modelli/raymanlow.glb" alt="" auto-rotate
+                        camera-controls></model-viewer>
+                </div>
+                <div class="info-modello">
+                    <h3>Rayman 4</h3>
+                    <p>Title: Rayman</p>
+                    <a class="link-sketchfab"
+                        href="https://sketchfab.com/3d-models/rayman-lowpoly-12b4a207abc34055a0d1c9f4e19159c5"
+                        target="_blank">View on Sketchfab</a>
+                </div>
+            </div>
+
+            <div class="scheda-modello">
+                <div class="embed-sketchfab">
+                    <model-viewer class="carousel__model" src="modelli/earthbound_64_porkbean__pickle_car.glb"
+                        alt="Earthbound 64" auto-rotate camera-controls></model-viewer>
+                </div>
+                <div class="info-modello">
+                    <h3>Earthbound 64</h3>
+                    <p>Title: Pickle car</p>
+                    <a class="link-sketchfab"
+                        href="https://sketchfab.com/3d-models/earthbound-64-porkbean-pickle-car-ed20b663b4ef4783b3ed2ab370bb8e59"
+                        target="_blank">View on Sketchfab</a>
+                </div>
+            </div>
+
+            <div class="scheda-modello">
+                <div class="embed-sketchfab">
+                    <model-viewer class="carousel__model" src="modelli/KID_KIRBY.glb" alt="Earthbound 64" auto-rotate
+                        camera-controls></model-viewer>
+                </div>
+                <div class="info-modello">
+                    <h3>Kid Kirby</h3>
+                    <p>Title: Kid Kirby</p>
+                    <a class="link-sketchfab"
+                        href="https://sketchfab.com/3d-models/kid-kirby-9fd97c32e68245ed82f8126168b31112"
+                        target="_blank">View on Sketchfab</a>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <a class="footer__link" href="sources.html">sources</a>
+        <a class="footer__link active" href="3DModels.html">models 3d</a>
+        <a class="footer__link" href="about-us.html">about us</a>
+    </footer>
+
+</body>
+
+</html>

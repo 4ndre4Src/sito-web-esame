@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VAPORWARE – Echoes of Games That Never Were</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet" />
+
+    <!-- Model Viewer per i modelli 3D nelle card del carosello -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- NAVBAR fissa -->
+
+    <nav class="navbar">
+        <!-- Logo come immagine, cliccando torna in cima alla pagina -->
+        <a href="#top" class="navbar__logo">
+            <img src="img/logo-vaporware.png" alt="Vaporware logo" />
+        </a>
+
+        <ul class="navbar__menu">
+            <!-- Lost selection: scorrimento smooth verso il carosello nella stessa pagina -->
+            <li><a href="lost-selection.html" class="active">lost selection</a></li>
+            <li><a href="vanishing-projects.html">vanishing projects</a></li>
+            <li><a href="broken-promises.html">broken promises</a></li>
+            <li><a href="phantom-hardware.html">phantom hardware</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO  -->
+
+    <section class="hero" id="top">
+
+        <img class="hero__bg" src="img/hero-bg.png" alt="" aria-hidden="true" />
+
+        <div class="hero__content">
+
+            <img class="hero__logo" src="img/logo-sun.png" alt="Vaporware" />
+
+            <p class="hero__title">ECHOES OF GAMES THAT NEVER WERE</p>
+
+            <p class="hero__paragraph">
+                Questo spazio è dedicato ai giochi perduti: progetti cancellati, versioni mai pubblicate
+                e idee rimaste allo stadio di prototipo. VAPORWARE raccoglie e racconta queste storie
+                attraverso immagini, modelli e frammenti di sviluppo, trasformando ciò che è stato
+                dimenticato in memoria condivisa.
+            </p>
+        </div>
+    </section>
+
+    <!-- VIDEO DI SFONDO ANIMATO – sticky, rimane visibile una volta superata la hero -->
+    <div class="video-bg" aria-hidden="true">
+        <video autoplay muted loop playsinline>
+            <!-- Sostituire con il percorso del video reale -->
+            <source src="video/bg-video.mp4" type="video/mp4" />
+        </video>
+    </div>
+
+    <!-- Wrapper del contenuto sotto la hero -->
+    <div class="content-below-hero">
+
+        <!-- SEZIONE CAROSELLO – scroll orizzontale con scrollbar custom a tema -->
+        <section class="carousel-section" id="lost-selection">
+            <h2 class="section-title">THE LOST SELECTION</h2>
+
+            <div class="carousel__track">
+
+                <a class="carousel__card" href="gioco-1.html">
+                    <img class="carousel__card-bg" src="img/model-bg.jpg" alt="" aria-hidden="true" />
+                    <model-viewer class="carousel__model" src="modelli/earthbound_64_porkbean__pickle_car.glb" alt="Earthbound 64"
+                        auto-rotate></model-viewer>
+                    <span class="carousel__card-label">EARTHBOUND 64</span>
+                </a>
+
+                <a class="carousel__card" href="gioco-2.html">
+                    <img class="carousel__card-bg" src="img/model-bg.jpg" alt="" aria-hidden="true" />
+                    <model-viewer class="carousel__model" src="modelli/raymanlow.glb" alt="Rayman 4"
+                        auto-rotate></model-viewer>
+                    <span class="carousel__card-label">RAYMAN 4</span>
+                </a>
+
+                <a class="carousel__card" href="gioco-3.html">
+                    <img class="carousel__card-bg" src="img/model-bg.jpg" alt="" aria-hidden="true" />
+                    <model-viewer class="carousel__model" src="modelli/SONIC_SOLO.glb" alt="Sonic Xtreme"
+                        auto-rotate></model-viewer>
+                    <span class="carousel__card-label">SONIC XTREME</span>
+                </a>
+
+                <a class="carousel__card" href="gioco-4.html">
+                    <img class="carousel__card-bg" src="img/model-bg.jpg" alt="" aria-hidden="true" />
+                    <model-viewer class="carousel__model" src="modelli/Megaman_Cannon.glb" alt="Megaman Legends"
+                        auto-rotate></model-viewer>
+                    <span class="carousel__card-label">MEGAMAN LEGENDS</span>
+                </a>
+
+                <a class="carousel__card" href="gioco-5.html">
+                    <img class="carousel__card-bg" src="img/model-bg.jpg" alt="" aria-hidden="true" />
+                    <model-viewer class="carousel__model" src="modelli/KID_KIRBY.glb" alt="Kid Kirby"
+                        auto-rotate></model-viewer>
+                    <span class="carousel__card-label">KID KIRBY</span>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- SEZIONE CATEGORIE -->
+        <section class="categories-section">
+            <h2 class="section-title">LOST BUT NOT FORGOTTEN</h2>
+
+            <div class="categories-grid">
+
+                <a class="cat-card" href="vanishing-projects.html">
+                    <span class="cat-card__title">VANISHING PROJECTS</span>
+                    <img class="cat-card__img" src="img/vanishing-projects-card.jpg" alt="Vanishing Projects" />
+                    <span class="cat-card__link">VIEW PAGE</span>
+                </a>
+
+                <a class="cat-card" href="broken-promises.html">
+                    <span class="cat-card__title">BROKEN PROMISES</span>
+                    <img class="cat-card__img" src="img/broken-promises-card.jpeg" alt="Broken Promises" />
+                    <span class="cat-card__link">VIEW PAGE</span>
+                </a>
+
+                <a class="cat-card" href="phantom-hardware.html">
+                    <span class="cat-card__title">PHANTOM HARDWARE</span>
+                    <img class="cat-card__img" src="img/phantom-hardware-card.jpg" alt="Phantom Hardware" />
+                    <span class="cat-card__link">VIEW PAGE</span>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <a class="footer__link" href="sources.html">sources</a>
+            <a class="footer__link" href="3DModels.html">models 3d</a>
+            <a class="footer__link" href="about-us.html">about us</a>
+        </footer>
+
+    </div><!-- fine .content-below-hero -->
+
+</body>
+
+</html>

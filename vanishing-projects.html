@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VANISHING PROJECTS – Vaporware</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="navbar__logo">
+            <img src="img/logo-vaporware.png" alt="Vaporware logo" />
+        </a>
+
+        <ul class="navbar__menu">
+            <li><a href="lost-selection.html#lost-selection">lost selection</a></li>
+            <li><a href="vanishing-projects.html" class="active">vanishing projects</a></li>
+            <li><a href="broken-promises.html">broken promises</a></li>
+            <li><a href="phantom-hardware.html">phantom hardware</a></li>
+        </ul>
+    </nav>
+
+    <section class="vanishing-hero">
+        <div class="testo-hero">
+            <h1>VANISHING PROJECTS</h1>
+            <h2>STILL ALIVE — OR ALREADY VAPOR?</h2>
+            <p>Games announced long ago, now suspended in silence.</p>
+        </div>
+
+        <div class="anteprime">
+            <div class="card-anteprima">
+                <img src="img/beyond.jpg" alt="Beyond Good & Evil 2">
+                <a href="#beyond" class="bottone">View Game</a>
+            </div>
+            <div class="card-anteprima">
+                <img src="img/tes6.webp" alt="The Elder Scrolls VI">
+                <a href="#tes6" class="bottone">View Game</a>
+            </div>
+            <div class="card-anteprima">
+                <img src="img/star-citizen.webp" alt="Star Citizen">
+                <a href="#starcitizen" class="bottone">View Game</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="project" id="beyond">
+        <div class="line">Project in the void</div>
+
+        <div class="contenuto-project">
+            <div class="colonna-media">
+                <p class="data-annuncio">Announced: 2008 (Teaser)</p>
+                <img src="img/beyond.jpg" alt="Beyond Good & Evil 2">
+                <p>After an ambitious reveal in 2017, complete with a tech demo and the promise of a procedural
+                    open-world universe, the project has undergone changes in creative direction and internal issues.
+                    Ubisoft has confirmed it's still in development, but no concrete gameplay has been shown for years.
+                </p>
+            </div>
+
+            <div class="colonna-info">
+                <h3>Beyond Good & Evil 2</h3>
+                <ul>
+                    <li><strong>developer:</strong> ubisoft montpellier</li>
+                    <li><strong>platform:</strong> pc, ps4, xbox one</li>
+                    <li><strong>status:</strong> unknown / in development (no release window)</li>
+                    <li><strong>years in development:</strong> 16 years (intermittent)</li>
+                    <li><strong>last official update:</strong> 2021</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="project" id="tes6">
+        <div class="line">Project in the void</div>
+
+        <div class="contenuto-project inverso">
+            <div class="colonna-media">
+                <p class="data-annuncio">Announced: 2018 (Teaser)</p>
+                <img src="img/tes6.webp" alt="The Elder Scrolls VI">
+                <p>Announced with a brief teaser during E3 2018, The Elder Scrolls VI remained without any concrete
+                    updates for years. Bethesda confirmed several times that active development would only begin after
+                    the completion of Starfield, leaving the project in a lengthy preliminary phase. To date, no
+                    gameplay or significant details have been shown, making it one of the most anticipated yet quietest
+                    titles in the industry.</p>
+            </div>
+
+            <div class="colonna-info">
+                <h3>The Elder Scrolls VI</h3>
+                <ul>
+                    <li><strong>developer:</strong> bethesda game studios</li>
+                    <li><strong>platform:</strong> pc, xbox</li>
+                    <li><strong>status:</strong> in development, no release date yet</li>
+                    <li><strong>years in development:</strong> 6+ years</li>
+                    <li><strong>last official update:</strong> 2023-2024 (general information on early development)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="project" id="starcitizen">
+        <div class="line">Project in the void</div>
+
+        <div class="contenuto-project">
+            <div class="colonna-media">
+                <p class="data-annuncio">Announced: 2012 (Teaser)</p>
+                <img src="img/star-citizen.jpg" alt="Star Citizen">
+                <p>Crowdfunded and billed as an unprecedented space simulation, Star Citizen has been in continuous
+                    development since 2012. Despite regular updates and new features introduced in the alpha version,
+                    the project has yet to reach a full release. Growing ambition and a constantly expanding scope have
+                    contributed to prolonging its development, making it a unique case of a project that is always
+                    present but never finished.</p>
+            </div>
+
+            <div class="colonna-info">
+                <h3>Star Citizen</h3>
+                <ul>
+                    <li><strong>developer:</strong> cloud imperium games</li>
+                    <li><strong>platform:</strong> pc</li>
+                    <li><strong>status:</strong> in development (persistent alpha)</li>
+                    <li><strong>years in development:</strong> 12+ years</li>
+                    <li><strong>last official update:</strong> continuous updates (alpha), no final release</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <a class="footer__link" href="sources.html">sources</a>
+        <a class="footer__link" href="3DModels.html">models 3d</a>
+        <a class="footer__link" href="about-us.html">about us</a>
+    </footer>
+
+    <script>
+        const logo = document.querySelector('.navbar__logo');
+        let atTop = true;
+
+        window.addEventListener('scroll', () => {
+            atTop = window.scrollY < 50;
+        });
+
+        logo.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (atTop) {
+                window.location.href = 'lost-selection.html';
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    </script>
+
+</body>
+
+</html>

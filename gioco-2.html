@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rayman 4 – VAPORWARE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- NAVBAR identica alla home, con lost selection che rimanda al carosello della home -->
+    <nav class="navbar">
+        <a href="lost-selection.html" class="navbar__logo">
+            <img src="img/logo-vaporware.png" alt="Vaporware logo" />
+        </a>
+        <ul class="navbar__menu">
+            <li><a href="lost-selection.html#lost-selection">lost selection</a></li>
+            <li><a href="vanishing-projects.html">vanishing projects</a></li>
+            <li><a href="broken-promises.html">broken promises</a></li>
+            <li><a href="phantom-hardware.html">phantom hardware</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO DETTAGLIO
+       Due colonne: galleria a sinistra, info a destra.
+       La galleria usa radio CSS-only: cliccando una miniatura
+       si aggiorna l'immagine grande. -->
+    <section class="detail-hero">
+
+        <!-- GALLERIA IMMAGINI (CSS-only con radio)
+         Struttura: radio fratelli diretti di .gallery,
+         le label (miniature) mostrano/nascondono la foto grande. -->
+        <div class="gallery-root">
+
+            <!-- 4 radio, uno per immagine; il primo è attivo di default -->
+            <input type="radio" class="gallery__radio" name="gallery" id="img-0" checked />
+            <input type="radio" class="gallery__radio" name="gallery" id="img-1" />
+            <input type="radio" class="gallery__radio" name="gallery" id="img-2" />
+            <input type="radio" class="gallery__radio" name="gallery" id="img-3" />
+
+            <div class="gallery">
+
+                <!-- Immagine grande: una per radio, mostrata solo quando il radio è checked -->
+                <div class="gallery__main">
+                    <img class="gallery__main-img img-0" src="img/rayman-4/rayman-1.png" alt="Rayman 4 screenshot 1" />
+                    <img class="gallery__main-img img-1" src="img/rayman-4/rayman-2.jpg" alt="Rayman 4 screenshot 2" />
+                    <img class="gallery__main-img img-2" src="img/rayman-4/rayman-3.jpg" alt="Rayman 4 screenshot 3" />
+                    <img class="gallery__main-img img-3" src="img/rayman-4/rayman-4.png" alt="Rayman 4 screenshot 4" />
+                </div>
+
+                <!-- Miniature cliccabili: ogni label attiva il radio corrispondente -->
+                <div class="gallery__thumbs">
+                    <label class="gallery__thumb" for="img-0">
+                        <img src="img/rayman-4/rayman-1.png" alt="Miniatura 1" />
+                    </label>
+                    <label class="gallery__thumb" for="img-1">
+                        <img src="img/rayman-4/rayman-2.jpg" alt="Miniatura 2" />
+                    </label>
+                    <label class="gallery__thumb" for="img-2">
+                        <img src="img/rayman-4/rayman-3.jpg" alt="Miniatura 3" />
+                    </label>
+                    <label class="gallery__thumb" for="img-3">
+                        <img src="img/rayman-4/rayman-4.png" alt="Miniatura 4" />
+                    </label>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- INFO GIOCO a destra -->
+        <div class="detail-hero__info">
+            <img class="detail-hero__game-logo" src="img/rayman-4/rayman-logo.png" alt="Rayman 4" />
+
+            <ul class="detail-hero__meta">
+                <li><span class="meta-key">STATUS:</span> <span class="meta-val">CANCELLED</span></li>
+                <li><span class="meta-key">PLATFORM:</span> <span class="meta-val">PlayStation 2 / Xbox /
+                        GameCube</span></li>
+                <li><span class="meta-key">DEVELOPER:</span> <span class="meta-val">Ubisoft Montpellier</span></li>
+                <li><span class="meta-key">ANNOUNCED:</span> <span class="meta-val">2005</span></li>
+                <li><span class="meta-key">CANCELLED:</span> <span class="meta-val">2006</span></li>
+            </ul>
+
+            <p class="detail-hero__desc">
+                A cancelled Rayman platform game developed by Ubisoft before evolving into the Rabbids spin-off series.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- CONTENUTO PRINCIPALE – z-pattern di sezioni -->
+    <main class="detail-main">
+
+        <!-- OVERVIEW – testo a sinistra, video a destra -->
+        <section class="detail-section">
+            <div class="detail-section__text">
+                <h2 class="detail-section__title">OVERVIEW</h2>
+                <p>
+                    Rayman 4 was originally planned as a new mainline 3D platformer in the Rayman series.
+                </p>
+                <p>
+                    Developed during the mid-2000s, the project aimed to expand the franchise with larger environments,
+                    new gameplay mechanics, and a more cinematic presentation.
+                </p>
+                <p>
+                    During development, the game gradually shifted focus toward the Rabbids characters, eventually
+                    transforming into what became Rayman Raving Rabbids.
+                </p>
+                <p>
+                    As a result, the original version of Rayman 4 was never officially released.
+                </p>
+            </div>
+
+            <!-- Video con controlli nativi del browser: play/pause/volume/fullscreen integrati -->
+            <div class="detail-section__media">
+                <video class="detail-video" controls poster="img/rayman-4/rayman-overview.png">
+                    <source src="img/rayman-4/rayman-trailer.mp4" type="video/mp4" />
+                    Il tuo browser non supporta il tag video.
+                </video>
+                <p class="detail-section__caption">Trailer video of Rayman 4.</p>
+            </div>
+        </section>
+
+        <!-- STORY – immagine a sinistra, testo a destra (z invertito) -->
+        <section class="detail-section detail-section--reverse">
+            <div class="detail-section__media">
+                <img src="img/rayman-4/rayman-story.jpg" alt="Rayman 4 – concept art" />
+                <p class="detail-section__caption">Concept art of village in Rayman 4
+                </p>
+            </div>
+
+            <div class="detail-section__text">
+                <h2 class="detail-section__title">STORY</h2>
+                <p>
+                    Early concepts for Rayman 4 followed Rayman as he attempted to stop an invasion of chaotic
+                    rabbit-like creatures later known as the Rabbids
+                </p>
+                <p>
+                    The game appeared to feature surreal environments, exaggerated humor, and action-focused sequences
+                    across multiple worlds.
+                </p>
+                <p>
+                    Prototype footage suggested a more adventurous and cinematic tone compared to previous Rayman
+                    titles, while still maintaining the series’ colorful and absurd atmosphere.
+                </p>
+            </div>
+        </section>
+
+        <!-- GAMEPLAY – testo a sinistra, video a destra -->
+        <section class="detail-section">
+            <div class="detail-section__text">
+                <h2 class="detail-section__title">GAMEPLAY</h2>
+                <p>
+                    Rayman 4 was designed as a 3D action-platform game focused on movement, combat, and environmental
+                    interaction.
+                </p>
+                <p>Gameplay included:</p>
+                <ul class="detail-list">
+                    <li>platforming</li>
+                    <li>melee combat</li>
+                    <li>puzzle-solving</li>
+                    <li>vehicle sections</li>
+                    <li>enemy encounters</li>
+                </ul>
+                <p>
+                    The project also experimented with physics-based interactions and cinematic sequences uncommon for
+                    earlier Rayman games.
+                </p>
+                <p>
+                    Several gameplay concepts later evolved into the mini-game structure used in Rayman Raving Rabbids.
+                </p>
+            </div>
+
+            <div class="detail-section__media">
+                <video class="detail-video" controls poster="img/rayman-4/rayman-gameplay.jpg">
+                    <source src="img/rayman-4/rayman-gameplay.mp4" type="video/mp4" />
+                    Il tuo browser non supporta il tag video.
+                </video>
+                <p class="detail-section__caption">Gameplay of Rayman 4.</p>
+            </div>
+        </section>
+
+        <!-- DEVELOPMENT – immagine a sinistra, testo a destra -->
+        <section class="detail-section detail-section--reverse">
+            <div class="detail-section__media">
+                <img src="img/rayman-4/rayman-sviluppo.jpg" alt="Development Documentation – Rayman 4" />
+                <p class="detail-section__caption">Power up of Rayman Sub</p>
+            </div>
+
+            <div class="detail-section__text">
+                <h2 class="detail-section__title">DEVELOPMENT</h2>
+                <p>
+                    Development began at Ubisoft Montpellier under the supervision of Michel Ancel.
+                </p>
+                <p>
+                    As production continued, the Rabbids characters became increasingly popular within the studio,
+                    eventually overtaking the original direction of the project.
+                </p>
+                <p>
+                    The game underwent major redesigns before Ubisoft decided to transform it into a launch title for
+                    the Nintendo Wii.
+                </p>
+                <p>
+                    Only prototype footage, early trailers, and concept material from the original Rayman 4 survived.
+                </p>
+            </div>
+        </section>
+
+        <!-- CANCELLATION & LEGACY – testo a sinistra, immagine a destra -->
+        <section class="detail-section">
+            <div class="detail-section__text">
+                <h2 class="detail-section__title">CANCELLATION &amp; LEGACY</h2>
+                <p>
+                    The original version of Rayman 4 was never officially completed.
+                </p>
+                <p>
+                    Instead of releasing the planned platform game, Ubisoft reworked the project into Rayman Raving
+                    Rabbids, shifting the focus toward party-game mechanics and the Rabbids characters.
+                </p>
+                <p>
+                    This decision permanently cancelled the original vision of Rayman 4.
+                <p>
+                    Although parts of the project evolved into another game, the cancelled version of Rayman 4 remains
+                    highly discussed among Rayman fans and game preservation communities.
+                </p>
+                <p>
+                    Prototype videos and leaked footage continue to circulate online, offering a glimpse into an
+                    alternative direction for the franchise before the Rabbids became Ubisoft’s primary focus.
+                </p>
+            </div>
+
+            <div class="detail-section__media">
+                <img src="img/rayman-4/rayman-legacy.png" alt="Lair of dark rayman" />
+                <p class="detail-section__caption">Lair of dark rayman.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER identico alla home -->
+    <footer class="footer">
+            <a class="footer__link" href="sources.html">sources</a>
+            <a class="footer__link" href="3DModels.html">models 3d</a>
+            <a class="footer__link" href="about-us.html">about us</a>
+        </footer>
+
+    <script>
+        const logo = document.querySelector('.navbar__logo');
+        let atTop = true;
+
+        window.addEventListener('scroll', () => {
+            atTop = window.scrollY < 50;
+        });
+
+        logo.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (atTop) {
+                window.location.href = 'lost-selection.html';
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    </script>
+
+</body>
+
+</html>

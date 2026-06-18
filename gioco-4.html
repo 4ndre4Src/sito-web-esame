@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Megaman Legends – VAPORWARE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- NAVBAR identica alla home, con lost selection che rimanda al carosello della home -->
+    <nav class="navbar">
+        <a href="lost-selection.html" class="navbar__logo">
+            <img src="img/logo-vaporware.png" alt="Vaporware logo" />
+        </a>
+        <ul class="navbar__menu">
+            <li><a href="lost-selection.html#lost-selection">lost selection</a></li>
+            <li><a href="vanishing-projects.html">vanishing projects</a></li>
+            <li><a href="broken-promises.html">broken promises</a></li>
+            <li><a href="phantom-hardware.html">phantom hardware</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO DETTAGLIO
+       Due colonne: galleria a sinistra, info a destra.
+       La galleria usa radio CSS-only: cliccando una miniatura
+       si aggiorna l'immagine grande. -->
+    <section class="detail-hero">
+
+        <!-- GALLERIA IMMAGINI (CSS-only con radio)
+         Struttura: radio fratelli diretti di .gallery,
+         le label (miniature) mostrano/nascondono la foto grande. -->
+        <div class="gallery-root">
+
+            <!-- 4 radio, uno per immagine; il primo è attivo di default -->
+            <input type="radio" class="gallery__radio" name="gallery" id="img-0" checked />
+            <input type="radio" class="gallery__radio" name="gallery" id="img-1" />
+            <input type="radio" class="gallery__radio" name="gallery" id="img-2" />
+            <input type="radio" class="gallery__radio" name="gallery" id="img-3" />
+
+            <div class="gallery">
+
+                <!-- Immagine grande: una per radio, mostrata solo quando il radio è checked -->
+                <div class="gallery__main">
+                    <img class="gallery__main-img img-0" src="img/megaman-legends/megaman-legends-1.webp" alt="" />
+                    <img class="gallery__main-img img-1" src="img/megaman-legends/megaman-legends-2.webp" alt="" />
+                    <img class="gallery__main-img img-2" src="img/megaman-legends/megaman-legends-3.webp" alt="" />
+                    <img class="gallery__main-img img-3" src="img/megaman-legends/megaman-legends-4.webp" alt="" />
+                </div>
+
+                <!-- Miniature cliccabili: ogni label attiva il radio corrispondente -->
+                <div class="gallery__thumbs">
+                    <label class="gallery__thumb" for="img-0">
+                        <img src="img/megaman-legends/megaman-legends-1.webp" alt="Miniatura 1" />
+                    </label>
+                    <label class="gallery__thumb" for="img-1">
+                        <img src="img/megaman-legends/megaman-legends-2.webp" alt="Miniatura 2" />
+                    </label>
+                    <label class="gallery__thumb" for="img-2">
+                        <img src="img/megaman-legends/megaman-legends-3.webp" alt="Miniatura 3" />
+                    </label>
+                    <label class="gallery__thumb" for="img-3">
+                        <img src="img/megaman-legends/megaman-legends-4.webp" alt="Miniatura 4" />
+                    </label>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- INFO GIOCO a destra -->
+        <div class="detail-hero__info">
+            <img class="detail-hero__game-logo" src="img/megaman-legends/megaman-legends-logo.png" alt="" />
+
+            <ul class="detail-hero__meta">
+                <li><span class="meta-key">STATUS:</span> <span class="meta-val">CANCELLED</span></li>
+                <li><span class="meta-key">PLATFORM:</span> <span class="meta-val">Nintendo 3DS e</span></li>
+                <li><span class="meta-key">DEVELOPER:</span> <span class="meta-val">Capcom </span></li>
+                <li><span class="meta-key">ANNOUNCED:</span> <span class="meta-val">2010</span></li>
+                <li><span class="meta-key">CANCELLED:</span> <span class="meta-val">2011</span></li>
+            </ul>
+
+            <p class="detail-hero__desc">
+                A cancelled Mega Man action-adventure game developed by Capcom for the Nintendo 3DS.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- CONTENUTO PRINCIPALE – z-pattern di sezioni -->
+    <main class="detail-main">
+
+        <!-- OVERVIEW – testo a sinistra, video a destra -->
+        <section class="detail-section">
+            <div class="detail-section__text">
+                <h2 class="detail-section__title">OVERVIEW</h2>
+                <p>
+                    Mega Man Legends 3 was planned as the long-awaited continuation of the Mega Man Legends series.
+                </p>
+                <p>
+                    Announced for the Nintendo 3DS, the project aimed to continue the story left unresolved in Mega Man
+                    Legends 2 while introducing updated visuals, exploration mechanics, and community-driven development
+                    features.
+                </p>
+                <p>
+                    Despite strong fan interest and public promotion, the game was officially cancelled in 2011 before
+                    entering full production.
+                </p>
+            </div>
+
+            <!-- Video con controlli nativi del browser: play/pause/volume/fullscreen integrati -->
+            <div class="detail-section__media">
+                <video class="detail-video" controls poster="img/megaman-legends/megaman-legends-overview.webp">
+                    <source src="img/megaman-legends/megaman-legends-trailer.mp4" type="video/mp4" />
+                    Il tuo browser non supporta il tag video.
+                </video>
+                <p class="detail-section__caption">Trailer video of Megaman Legends 3.</p>
+            </div>
+        </section>
+
+        <!-- STORY – immagine a sinistra, testo a destra (z invertito) -->
+        <section class="detail-section detail-section--reverse">
+            <div class="detail-section__media">
+                <img src="img/megaman-legends/megaman-legends-story.webp" alt="" />
+                <p class="detail-section__caption">Promotional screenshot
+                </p>
+            </div>
+
+            <div class="detail-section__text">
+                <h2 class="detail-section__title">STORY</h2>
+                <p>
+                    The game was intended to continue the story of Mega Man Volnutt after the ending of Mega Man Legends
+                    2, where the protagonist remained stranded on the moon.
+                </p>
+                <p>
+                    Players would once again explore futuristic ruins, islands, and underground environments while
+                    uncovering mysteries connected to ancient technology and lost civilizations.
+                </p>
+                <p>
+                    Early information suggested that the game would expand the lore of the series while introducing new
+                    characters and locations.
+                </p>
+            </div>
+        </section>
+
+        <!-- GAMEPLAY – testo a sinistra, video a destra -->
+        <section class="detail-section">
+            <div class="detail-section__text">
+                <h2 class="detail-section__title">GAMEPLAY</h2>
+                <p>
+                    Mega Man Legends 3 was designed as a 3D action-adventure game combining exploration, combat, and
+                    role-playing elements.
+                </p>
+                <p>Gameplay included:</p>
+                <ul class="detail-list">
+                    <li>real-time combat </li>
+                    <li>dungeon exploration </li>
+                    <li>environmental puzzles </li>
+                    <li>customizable weapons </li>
+                    <li>open-area progression </li>
+                </ul>
+                <p>
+                    The project also experimented with community feedback systems, allowing fans to participate in
+                    aspects of development through the “Devroom” initiative.
+                </p>
+                <p>
+                    Prototype footage revealed gameplay that remained stylistically consistent with earlier Mega Man
+                    Legends titles while modernizing controls and camera movement.
+                </p>
+            </div>
+
+            <div class="detail-section__media">
+                <video class="detail-video" controls poster="img/megaman-legends/megaman-legends-gameplay.webp">
+                    <source src="img/megaman-legends/megaman-legends-gameplay.mp4" type="video/mp4" />
+                    Il tuo browser non supporta il tag video.
+                </video>
+                <p class="detail-section__caption">Screen of gameplay of Megaman Legends 3.</p>
+            </div>
+        </section>
+
+        <!-- DEVELOPMENT – immagine a sinistra, testo a destra -->
+        <section class="detail-section detail-section--reverse">
+            <div class="detail-section__media">
+                <img src="img/megaman-legends/megaman-legends-sviluppo.webp" alt="" />
+                <p class="detail-section__caption">Development image</p>
+            </div>
+
+            <div class="detail-section__text">
+                <h2 class="detail-section__title">DEVELOPMENT</h2>
+                <p>
+                    Development began under Capcom as a collaboration between internal developers and the Mega Man fan
+                    community.
+                </p>
+                <p>
+                    The game was publicly presented through development blogs, concept art, and interactive feedback
+                    initiatives where fans could vote on ideas and contribute suggestions.
+                </p>
+                <p>
+                    A downloadable prototype titled “Mega Man Legends 3: Prototype Version” was also announced for the
+                    Nintendo 3DS eShop but never released.
+                </p>
+                <p>
+                    As development continued, uncertainty surrounding the future of the Mega Man franchise reportedly
+                    affected the project.
+                </p>
+            </div>
+        </section>
+
+        <!-- CANCELLATION & LEGACY – testo a sinistra, immagine a destra -->
+        <section class="detail-section">
+            <div class="detail-section__text">
+                <h2 class="detail-section__title">CANCELLATION &amp; LEGACY</h2>
+                <p>
+                    Mega Man Legends 3 was officially cancelled in 2011.
+                </p>
+                <p>
+                    Capcom stated that the project did not meet the necessary conditions required for continued
+                    development, though the announcement generated significant backlash from fans.
+                </p>
+                <p>
+                    The cancellation also followed the departure of several important Capcom figures associated with the
+                    Mega Man franchise, including Keiji Inafune.
+                <p>
+                    Fans organized petitions, campaigns, and preservation efforts after the announcement, turning the
+                    project into a symbol of unfinished potential within the Mega Man series.
+                </p>
+                <p>
+                    Even years later, the game continues to be discussed as one of gaming’s most disappointing
+                    unreleased sequels.
+                </p>
+            </div>
+
+            <div class="detail-section__media">
+                <img src="img/megaman-legends/megaman-legends-legacy.webp" alt="" />
+                <p class="detail-section__caption">Screen of the beta game.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER identico alla home -->
+    <footer class="footer">
+        <a class="footer__link" href="sources.html">sources</a>
+        <a class="footer__link" href="3DModels.html">models 3d</a>
+        <a class="footer__link" href="about-us.html">about us</a>
+    </footer>
+
+    <script>
+        const logo = document.querySelector('.navbar__logo');
+        let atTop = true;
+
+        window.addEventListener('scroll', () => {
+            atTop = window.scrollY < 50;
+        });
+
+        logo.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (atTop) {
+                window.location.href = 'lost-selection.html';
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    </script>
+
+</body>
+
+</html>
