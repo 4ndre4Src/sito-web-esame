@@ -1,3 +1,5 @@
+/* VARIABILI CSS */
+
 :root {
     --color-bg: #0d0010;
     --color-purple: #7b00ff;
@@ -7,27 +9,35 @@
     --color-white: #ffffff;
     --color-card-bg: #1a1a2e;
     --color-stroke: #6a00cc;
+
+    /* Gradiente usato sia nella navbar che nel footer */
     --gradient-bar: linear-gradient(90deg, #3d00a0 0%, #7b00ff 50%, #c800a0 100%);
+
     --font-title: 'Orbitron', sans-serif;
     --font-body: Arial, sans-serif;
+
     --nav-height: 3.5rem;
     --transition: 0.3s ease;
 }
 
+/* RESET BASE */
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
 }
 
+
 body {
     font-family: Arial, sans-serif;
     color: var(--color-white);
     background-color: var(--color-bg);
+    overflow-x: hidden;
 }
 
 img {
@@ -73,19 +83,20 @@ a {
 
 .navbar__menu a {
     font-weight: bold;
-    font-size: clamp(0.9rem, 1.4vw, 1.1rem);
-    transition: color var(--transition);
+    font-size: clamp(0.9rem, 1.4vw, 1.1rem);;
 }
 
-.navbar__menu a:hover,
-.navbar__menu a.active,
-.footer__link:hover,
-.footer__link.active {
+.navbar__menu a:hover {
     color: var(--color-yellow);
 }
 
-/* HERO */
+.navbar__menu a .active {
+    color: var(--color-yellow);
+}
 
+/* SECTION HERO */
+
+/* immagine a tutto schermo */
 .hero {
     position: relative;
     width: 100vw;
@@ -102,6 +113,7 @@ a {
     z-index: 1;
 }
 
+/* Overlay scuro sopra l'immagine per leggibilità del testo */
 .hero::after {
     content: '';
     position: absolute;
@@ -111,7 +123,6 @@ a {
 }
 
 .hero__content {
-    position: relative;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -128,15 +139,16 @@ a {
     letter-spacing: 4px;
 }
 
+/* Paragrafo con linee verticali ai lati tramite border-left e border-right */
 .hero__paragraph {
     padding: 2rem;
     font-size: clamp(1rem, 1.2vw, 1.8rem);
     line-height: 1.6;
-    border-left: 2px solid var(--color-white);
-    border-right: 2px solid var(--color-white);
+    border-left: 4px solid var(--color-white);
+    border-right: 4px solid var(--color-white);
 }
 
-/* VIDEO BG */
+/* VIDEO DI SFONDO ANIMATO – sticky dopo la hero-image */
 
 .video-bg {
     position: fixed;
@@ -147,15 +159,17 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+
 }
+
+/* CONTENUTO SOTTO LA HERO */
 
 .content-below-hero {
     position: relative;
     z-index: 1;
 }
 
-/* SECTION TITLE */
+/* TITOLI DI SEZIONE (riutilizzato in più sezioni) */
 
 .section-title {
     font-family: var(--font-title);
@@ -165,7 +179,7 @@ a {
     margin-bottom: 3rem;
 }
 
-/* CAROSELLO */
+/* CAROSELLO – scroll orizzontale con scrollbar custom a tema */
 
 .carousel-section {
     padding: 10rem 20rem;
@@ -178,31 +192,36 @@ a {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     padding: 4rem;
+
 }
 
+/* Scrollbar */
 .carousel__track::-webkit-scrollbar {
     height: 30px;
 }
 
+/* Binario della scrollbar: semi-trasparente */
 .carousel__track::-webkit-scrollbar-track {
     background: rgba(255, 167, 226, 0.08);
     border-radius: 10px;
 }
 
+/* Thumb (la parte che si muove) */
 .carousel__track::-webkit-scrollbar-thumb {
     background: linear-gradient(90deg, #ff44dd, #9b33ff);
     border-radius: 10px;
 }
 
 .carousel__card {
-    flex: 0 0 40vw;
-    scroll-snap-align: center;
+    width: 35vw;  
+    flex-shrink: 0;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Immagine di sfondo della card */
 .carousel__card-bg {
     width: 100%;
     height: auto;
@@ -210,6 +229,7 @@ a {
     display: block;
 }
 
+/* Model viewer sovrapposto e centrato */
 .carousel__model {
     position: absolute;
     top: 50%;
@@ -230,7 +250,7 @@ a {
     margin-top: 3rem;
 }
 
-/* CATEGORIE */
+/* SEZIONE CATEGORIE */
 
 .categories-section {
     padding: 10rem 1rem;
@@ -263,8 +283,6 @@ a {
 
 .cat-card:hover {
     transform: scale(0.96);
-    color: var(--color-magenta);
-    border-color: var(--color-magenta);
 }
 
 .cat-card__title,
@@ -279,6 +297,11 @@ a {
     aspect-ratio: 4 / 3;
     object-fit: cover;
     border-radius: 0.4rem;
+}
+
+.cat-card:hover {
+    color: var(--color-magenta);
+    border-color: var(--color-magenta);
 }
 
 /* FOOTER */
@@ -298,7 +321,18 @@ a {
     transition: color var(--transition);
 }
 
-/* DETAIL HERO */
+.footer__link:hover {
+    color: var(--color-yellow);
+}
+
+.footer__link.active {
+    color: var(--color-yellow);
+}
+
+
+
+/* PAGINA DETTAGLIO GIOCO/
+HERO DETTAGLIO – due colonne: galleria / info */
 
 .detail-hero {
     align-items: center;
@@ -309,7 +343,10 @@ a {
     background: rgba(46, 1, 77, 0.55);
 }
 
-/* GALLERY */
+/* GALLERIA CSS-ONLY
+   I radio sono fratelli diretti di .gallery dentro .gallery-root.
+   Ogni .gallery__main-img è nascosta di default;
+   il radio:checked rivela l'immagine corrispondente tramite ~ */
 
 .gallery__radio {
     position: absolute;
@@ -322,6 +359,7 @@ a {
     gap: 1.5rem;
 }
 
+/* Contenitore immagine grande */
 .gallery__main {
     position: relative;
     border: 2px solid var(--color-stroke);
@@ -330,6 +368,7 @@ a {
     aspect-ratio: 4 / 3;
 }
 
+/* Tutte le immagini grandi: sovrapposte, invisibili di default */
 .gallery__main-img {
     position: absolute;
     width: 100%;
@@ -339,6 +378,7 @@ a {
     transition: opacity var(--transition);
 }
 
+/* Mostra l'immagine corrispondente al radio attivo */
 #img-0:checked~.gallery .img-0,
 #img-1:checked~.gallery .img-1,
 #img-2:checked~.gallery .img-2,
@@ -346,6 +386,7 @@ a {
     opacity: 1;
 }
 
+/* Riga miniature immagini */
 .gallery__thumbs {
     display: flex;
     gap: 1rem;
@@ -371,26 +412,20 @@ a {
     border-color: var(--color-purple);
 }
 
-#img-0:checked~.gallery .gallery__thumbs label:nth-child(1),
-#img-1:checked~.gallery .gallery__thumbs label:nth-child(2),
-#img-2:checked~.gallery .gallery__thumbs label:nth-child(3),
-#img-3:checked~.gallery .gallery__thumbs label:nth-child(4) {
-    border-color: var(--color-magenta);
-}
-
 /* INFO GIOCO */
-
 .detail-hero__info {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
+/* Logo titolo gioco */
 .detail-hero__game-logo {
     max-width: 60%;
     height: auto;
 }
 
+/* Lista metadati con chiave colorata e valore bianco */
 .detail-hero__meta {
     list-style: none;
     display: flex;
@@ -411,7 +446,9 @@ a {
     text-transform: uppercase;
 }
 
-/* DETAIL SECTIONS */
+/* SEZIONI Z-PATTERN
+   Alternano testo | media e media | testo.
+   .detail-section--reverse inverte l'ordine delle due colonne. */
 
 .detail-main {
     display: flex;
@@ -427,10 +464,12 @@ a {
     background: rgba(13, 0, 16, 0.55);
 }
 
+/* Sezioni pari: sfondo leggermente diverso per separazione visiva */
 .detail-section:nth-child(even) {
     background: rgba(46, 1, 77, 0.55);
 }
 
+/* Colonna testo */
 .detail-section__text {
     display: flex;
     flex-direction: column;
@@ -450,6 +489,7 @@ a {
     line-height: 1.6;
 }
 
+/* Lista puntata nelle sezioni */
 .detail-list {
     list-style: disc;
     padding-left: 1rem;
@@ -459,13 +499,20 @@ a {
     font-size: clamp(0.75rem, 1.5vw, 1.2rem);
 }
 
+/* Colonna media (immagine o video) */
 .detail-section__media {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-.detail-section__media img,
+.detail-section__media img {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 1rem;
+    border: 2px solid var(--color-stroke);
+}
+
 .detail-section__media video {
     width: 100%;
     margin: 0 auto;
@@ -473,6 +520,8 @@ a {
     border: 2px solid var(--color-stroke);
 }
 
+
+/* Didascalia sotto l'immagine */
 .detail-section__caption {
     font-size: clamp(0.7rem, 1vw, 1.2rem);
     letter-spacing: 0.1em;
@@ -480,6 +529,7 @@ a {
     text-align: center;
 }
 
+/* Inversione colonne per il pattern Z */
 .detail-section--reverse .detail-section__text {
     order: 2;
 }
@@ -488,7 +538,7 @@ a {
     order: 1;
 }
 
-/* VANISHING HERO */
+/* VANISHING PROJECTS / PAGINA CATEGORIE */
 
 .vanishing-hero {
     background: rgba(13, 0, 16, 0.55);
@@ -531,7 +581,7 @@ a {
     white-space: nowrap;
 }
 
-/* ANTEPRIME */
+/* --- ANTEPRIME (Le 3 Card nella hero) --- */
 
 .anteprime {
     display: grid;
@@ -577,8 +627,7 @@ a {
     z-index: 1;
 }
 
-/* BOTTONI */
-
+/* --- BOTTONI --- */
 .bottone {
     background: linear-gradient(90deg, var(--color-purple));
     padding: 1rem;
@@ -588,7 +637,7 @@ a {
     transition: border-color var(--transition);
 }
 
-/* PROJECTS */
+/* --- SEZIONE PROJECTS --- */
 
 .project {
     padding: 5rem 15rem;
@@ -656,7 +705,7 @@ a {
     line-height: 1.6;
 }
 
-/* CARD INFO */
+/* CARD INFORMATIVE */
 
 .colonna-info {
     background-color: var(--color-card-bg);
@@ -702,6 +751,8 @@ a {
     gap: 2.5rem;
 }
 
+/* GRIGLIA VIDEO */
+
 .griglia-video {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -715,6 +766,8 @@ a {
     border: 2px solid var(--color-stroke);
     display: block;
 }
+
+/* VERSUS */
 
 .confronto {
     padding: 0 5rem;
@@ -731,6 +784,7 @@ a {
     white-space: nowrap;
 }
 
+/*minore gap per spazio nella card-info*/
 .game .colonna-info li {
     margin-bottom: 0.5rem;
 }
@@ -745,7 +799,7 @@ a {
     padding-right: 4rem;
 }
 
-/* ABOUT */
+/* SEZIONE ABOUT US */
 
 .about-grid .colonna-info:last-child {
     grid-column: 1 / -1;
@@ -763,7 +817,7 @@ a {
     margin-bottom: 1rem;
 }
 
-/* MODELLI 3D */
+/* SEZIONE MODELLI 3D */
 
 .vanishing-hero p {
     white-space: normal;
@@ -836,7 +890,7 @@ a {
     color: var(--color-yellow);
 }
 
-/* SOURCES */
+/* SEZIONE SOURCES & RESEARCH */
 
 .link-fonte {
     color: var(--color-cyan) !important;
@@ -850,7 +904,7 @@ a {
     text-underline-offset: 4px;
 }
 
-/* 1200px */
+/* BREAKPOINT INTERMEDIO */
 
 @media (max-width: 1200px) {
 
@@ -871,9 +925,13 @@ a {
     }
 
     .categories-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
         max-width: 85%;
     }
+
+    /* PAGINA DETTAGLIO */
 
     .detail-hero {
         gap: 7rem;
@@ -889,6 +947,8 @@ a {
         line-height: 1.6;
     }
 
+    /* VANISHING PROJECTS */
+
     .vanishing-hero h1 {
         white-space: nowrap;
     }
@@ -896,6 +956,16 @@ a {
     .project {
         padding: 4rem 6rem;
     }
+
+    .contenuto-progetto.inverso .colonna-media {
+        order: 1;
+    }
+
+    .contenuto-progetto.inverso .colonna-info {
+        order: 2;
+    }
+
+    /* BROKEN PROMISES */
 
     .game__inner {
         padding: 3rem 8rem;
@@ -909,17 +979,21 @@ a {
         width: clamp(250px, 15vw, 300px);
     }
 
+    /* PHANTOM HARDWARE */
+
     .project-console {
         padding: 3rem 7rem;
     }
 
     .project-console .line {
-        padding-right: 0;
+        padding-right: 0rem;
     }
 
     .project-console .colonna-info li {
         margin-bottom: 0.5rem;
     }
+
+    /* MODELS 3D */
 
     .vanishing-hero {
         gap: 2rem;
@@ -930,9 +1004,10 @@ a {
         padding: 0 5rem 5rem 5rem;
         gap: 2rem;
     }
+
 }
 
-/* 900px */
+/* RESPONSIVE – TABLET (max 900px) */
 
 @media (max-width: 900px) {
 
@@ -961,10 +1036,13 @@ a {
         flex: 0 0 80vw;
     }
 
+    /* Categorie: incolonnate */
     .categories-grid {
         grid-template-columns: 1fr;
         max-width: 27rem;
     }
+
+    /* PAGINA DETTAGLIO */
 
     .detail-hero {
         grid-template-columns: 1fr;
@@ -991,6 +1069,8 @@ a {
         padding: 5rem 7rem;
     }
 
+
+    /* Annulla lo z-pattern: su tablet va sempre testo poi media */
     .detail-section--reverse .detail-section__text {
         order: 1;
     }
@@ -998,6 +1078,8 @@ a {
     .detail-section--reverse .detail-section__media {
         order: 2;
     }
+
+    /* VANISHING PROJECTS */
 
     .vanishing-hero {
         padding: 12rem 2rem 3rem 2rem;
@@ -1025,6 +1107,8 @@ a {
         width: clamp(300px, 60vw, 600px);
     }
 
+    /* BROKEN PROMISES */
+
     .game__inner {
         padding: 3rem 1rem;
     }
@@ -1036,7 +1120,10 @@ a {
 
     .confronto {
         padding-right: 3rem;
+        ;
     }
+
+    /* PHANTOM HARDWARE */
 
     .project-console {
         padding: 2rem 4rem;
@@ -1045,6 +1132,8 @@ a {
     .project-console .line {
         padding-right: 2rem;
     }
+
+    /* MODELS 3D */
 
     .vanishing-hero p {
         white-space: normal;
@@ -1070,16 +1159,18 @@ a {
         max-width: 100%;
         margin: 0 auto;
     }
+
 }
 
-/* 600px */
+/* RESPONSIVE – SMARTPHONE (max 600px) */
 
 @media (max-width: 600px) {
 
+    /* Navbar: voci incolonnate verticalmente */
     .navbar {
         flex-direction: column;
         height: auto;
-        padding: 1rem;
+        padding: 1rem 1rem;
         gap: 1rem;
         align-items: center;
     }
@@ -1107,6 +1198,7 @@ a {
         flex: 0 0 80vw;
     }
 
+    /* Categorie: stessa colonna singola */
     .categories-grid {
         max-width: 90%;
     }
@@ -1119,11 +1211,14 @@ a {
         padding: 3rem 0;
     }
 
+    /* Footer: voci incolonnate come la navbar */
     .footer {
         flex-direction: column;
         gap: 1.2rem;
         padding: 1.25rem 1rem;
     }
+
+    /* PAGINA DI DETTAGLIO */
 
     .detail-hero {
         grid-template-columns: 1fr;
@@ -1146,6 +1241,7 @@ a {
         padding: 4rem 5rem;
     }
 
+    /* Annulla lo z-pattern */
     .detail-section--reverse .detail-section__text {
         order: 1;
     }
@@ -1153,6 +1249,8 @@ a {
     .detail-section--reverse .detail-section__media {
         order: 2;
     }
+
+    /* VANISHING PROJECTS */
 
     .vanishing-hero {
         padding: 15rem 2rem 2rem 2rem;
@@ -1163,14 +1261,20 @@ a {
         gap: 2rem;
     }
 
-    .vanishing-hero h1,
-    .vanishing-hero h2,
+    .vanishing-hero h1 {
+        white-space: normal;
+    }
+
+    .vanishing-hero h2 {
+        white-space: normal;
+    }
+
     .vanishing-hero p {
         white-space: normal;
     }
 
     .anteprime {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(1, 1fr);
         gap: 1rem;
     }
 
@@ -1185,8 +1289,9 @@ a {
     }
 
     .project {
-        padding: 2rem 0;
+        padding: 2rem 0rem;
     }
+
 
     .colonna-info {
         padding: 1.5rem;
@@ -1195,7 +1300,10 @@ a {
 
     .colonna-info li {
         margin-bottom: 0.5rem;
+
     }
+
+    /* BROKEN PROMISES */
 
     .game__inner {
         padding: 2rem 1rem;
@@ -1204,17 +1312,23 @@ a {
 
     .confronto {
         gap: 0;
-        flex-direction: column;
-        padding-right: 3rem;
     }
 
     .griglia-video {
         gap: 1rem;
     }
 
+    .confronto {
+        flex-direction: column;
+        padding-right: 3rem;
+        ;
+    }
+
     .game .colonna-info {
         padding: 1.5rem;
     }
+
+    /* PHANTOM HARDWARE */
 
     .project-console {
         padding: 1.5rem 1rem;
@@ -1227,6 +1341,8 @@ a {
     .project-console .colonna-info {
         padding: 1.5rem;
     }
+
+    /* MODELS 3D */
 
     .container-modelli {
         max-width: 90%;
@@ -1242,4 +1358,5 @@ a {
         max-width: 100%;
         margin: 0 auto;
     }
+
 }
